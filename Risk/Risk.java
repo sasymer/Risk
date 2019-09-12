@@ -271,6 +271,10 @@ public class Risk extends JComponent
   
   public void start()
   {
+    int randomArmies = JOptionPane.showConfirmDialog(frame, "Randomly distribute armies?","Confirm",JOptionPane.YES_NO_OPTION);
+    
+    if (randomArmies == 0)
+      setArmiesRandom();
     setup();
     //place armies
     placeArmies(totalArmies);
