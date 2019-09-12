@@ -1,0 +1,74 @@
+import java.util.*;
+
+public class Player
+{
+  private int amountMoney;
+  private ArrayList<Place> placesOwned; //maybe should be a map instead
+  private int playerNum;
+  private boolean isAI;
+  private int armies;
+  private String color;
+  
+  public Player(int num, boolean ai)
+  {
+    playerNum = num;
+    isAI = ai;
+    placesOwned = new ArrayList<Place>();
+    
+  }
+  
+  public void addPlace(Place p)
+  {
+    placesOwned.add(p);
+  }
+  
+  public boolean removePlace(Place p)
+  {
+    for (int i = 0; i < placesOwned.size(); i++)
+    {
+      if (placesOwned.get(i).equals(p))
+      {
+        placesOwned.remove(i);
+        return true;
+      }
+    }
+    return false;
+  }
+  
+  public ArrayList<Place> getPlaces()
+  {
+    return placesOwned;
+  }
+  
+  public String getColor()
+  {
+    return color;
+  }
+ 
+  public void setColor(String c)
+  {
+    color = c;
+  }
+  
+  public boolean isAI()
+  {
+    return isAI;
+  }
+  
+  public int getPlayer()
+  {
+    return playerNum;
+  }
+  
+  public void addArmies(int toAdd)
+  {
+    armies += toAdd;
+  }
+  
+  public int getArmies()
+  {
+    return armies;
+  }
+  
+  
+}
